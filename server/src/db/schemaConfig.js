@@ -2,6 +2,10 @@ const stringConfig = {
   type:String,
   required:true,
 }
+const numberConfig = {
+  type:Number,
+  required:true,
+}
 
 const booleanConfig = {
   type:Boolean,
@@ -10,5 +14,6 @@ const booleanConfig = {
 
 module.exports = {
   stringConfig,
-  booleanConfig
+  booleanConfig,
+  numberConfig
 }
