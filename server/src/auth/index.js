@@ -99,8 +99,14 @@ router.post('/login', async (req,res,next) => {
   route that verifies jwt and allows user to change password
 */
 
-
 router.use(isLoggedIn);
+
+// Add friend 
+
+// Remove Friend
+
+// Timeline
+
 // update user
 router.put('/update', async (req, res, next) => {
   try {
@@ -117,7 +123,7 @@ router.put('/update', async (req, res, next) => {
     next(error);
   }
 })
-// delete user
+// delete user || when user is deleted need to remove user from all friends
 router.delete('/delete', async (req, res, next) => {
   try{
     const { userId } = req.query;
