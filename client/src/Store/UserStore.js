@@ -5,15 +5,37 @@ const userStore = {
   user:null,
   loading:false,
   error:null,
+  
+  // Actions
+  setUser: action((state,user) => {
+    state.user = user;
+  }),
+  setLoading: action((state,loading) => {
+    state.loading = loading;
+  }),
+  setError: action((state,error) => {
+    state.error = error;
+  }),
 
-  setUser: ((state,user) => {
-    state.user =  user;
+  userLogIn: thunk(async (actions,payload) => {
+    actions.setLoading(true);
+    actions.setError(null);
+    try {
+      setTimeout(() => {
+        console.log(payload)
+      }, 3000);
+    } catch (error) {
+      actions.setError(true);
+    }
+    actions.setLoading(false);
   }),
-  setLoading: ((state,user) => {
-    state.user =  user;
+
+  userSignUp: thunk(async (actions,payload) => {
+    console.log(payload);
   }),
-  setError: ((state,user) => {
-    state.user =  user;
+
+  getUser: thunk(async(actions,payload) => {
+
   }),
 
 };

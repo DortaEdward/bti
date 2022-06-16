@@ -1,0 +1,15 @@
+.loading-icon{
+  width:2.5rem;
+  height:2.5rem;
+  border: 5px solid rgba(197, 197, 197, 0.4);
+  border-radius: 50%;
+  border-top-color: #278EAE;
+  animation: spin 1s infinite;
+  margin-top:2rem;
+}
+
+@keyframes spin{
+  100%{
+    transform: rotate(360deg);
+  }
+}
