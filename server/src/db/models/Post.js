@@ -14,7 +14,7 @@ const postSchema = new Schema({
   description: {
     ...stringConfig,
   },
-  images:[{
+  images:[{ 
     type:String
   }],
   latitude:{
@@ -27,15 +27,19 @@ const postSchema = new Schema({
     min: -180,
     max: 180,
   },
+  pictureType:{
+    ...stringConfig,
+    default:'portrait'
+  },
   visitedAt:{
     type:Date,
     required:true,
     default:Date.now()
   },
-  rating: {
+  rating: [{
     ...numberConfig,
     default: 1
-  }
+  }]
 },{timestamps:true});
 
 const postModel = model('Posts', postSchema);
