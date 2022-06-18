@@ -9,7 +9,7 @@ function SignUpForm({toggleForm, setToggleForm}) {
   const repeatPassword= useRef(null);
   const userImgUrl= useRef(null);
   const { userSignUp } = useStoreActions(actions => actions.userStore);
-  const { loading, error } = useStoreState(state => state.userState);
+  const {error, loading} = useStoreState(state => state.userStore);
   const signUp = (e) => {
     e.preventDefault();
     const payload = {
